@@ -696,13 +696,16 @@ body {
 
 /* Левая колонка */
 .left-photo-column {
-  position: sticky;
+  position: fixed;
   top: 0;
+  left: 0;
   flex: 0 0 45%;
+  width: 45%;
   height: 100vh;
   overflow: hidden;
   background: #fff;
   display: block;
+  z-index: 1;
 }
 
 .left-photo-column img {
@@ -715,7 +718,10 @@ body {
 /* Правая колонка */
 .right-content-column {
   flex: 1;
+  margin-left: 45%;
   background: #fff;
+  position: relative;
+  z-index: 2;
 }
 
 /* Правим hero */
@@ -744,6 +750,7 @@ body {
 
   .right-content-column {
     width: 100%;
+    margin-left: 0;
   }
 
   .hero-text {
