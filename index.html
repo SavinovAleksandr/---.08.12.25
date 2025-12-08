@@ -43,11 +43,17 @@
     </div>
   </header>
 
-  <main>
-    <!-- HERO -->
-    <section class="hero" id="hero">
-      <div class="container hero-inner">
-        <div class="hero-content">
+  <main class="two-column-layout">
+    <!-- ЛЕВАЯ СТАТИЧНАЯ КОЛОНКА -->
+    <aside class="left-photo-column">
+      <img src="img/hero.jpg" alt="Олег Соловьёв">
+    </aside>
+
+    <!-- ПРАВАЯ ПРОКРУЧИВАЕМАЯ КОЛОНКА -->
+    <div class="right-content-column">
+      <!-- HERO (теперь без фото) -->
+      <section class="hero-text" id="hero">
+        <div class="hero-text-inner">
           <h1>Олег Соловьёв</h1>
           <p class="hero-subtitle">
             Предприниматель, специалист по консалтингу, продаже оборудования,
@@ -63,12 +69,7 @@
             <a class="btn ghost" href="#projects">Посмотреть проекты</a>
           </div>
         </div>
-
-        <div class="hero-photo-wrapper">
-          <img src="img/hero.jpg" alt="Олег Соловьёв" class="hero-photo">
-        </div>
-      </div>
-    </section>
+      </section>
 
     <!-- КОМПЕТЕНЦИИ -->
     <section class="section" id="competencies">
@@ -257,6 +258,7 @@
         </div>
       </div>
     </section>
+    </div>
   </main>
 
   <!-- FOOTER -->

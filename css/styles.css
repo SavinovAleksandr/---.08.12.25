@@ -743,6 +743,71 @@ body {
   }
 }
 
+/* === ДВУХКОЛОНОЧНЫЙ ЛЕЙАУТ КАК У ИГОРЯ МАННА === */
+
+.two-column-layout {
+  display: flex;
+  min-height: 100vh;
+  align-items: stretch;
+}
+
+/* Левая колонка */
+.left-photo-column {
+  position: sticky;
+  top: 0;
+  flex: 0 0 45%;
+  height: 100vh;
+  overflow: hidden;
+  background: #fff;
+  display: block;
+}
+
+.left-photo-column img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: top;
+}
+
+/* Правая колонка */
+.right-content-column {
+  flex: 1;
+  background: #fff;
+}
+
+/* Правим hero */
+.hero-text {
+  padding: 80px 40px 60px;
+}
+
+.hero-text-inner {
+  max-width: 650px;
+}
+
+.hero-text h1 {
+  font-size: 40px;
+  margin: 0 0 12px;
+}
+
+/* Скрываем фото на мобильных */
+@media (max-width: 900px) {
+  .two-column-layout {
+    flex-direction: column;
+  }
+
+  .left-photo-column {
+    display: none;
+  }
+
+  .right-content-column {
+    width: 100%;
+  }
+
+  .hero-text {
+    padding: 60px 20px 40px;
+  }
+}
+
 @media (max-width: 480px) {
   .hero-content h1 {
     font-size: 32px;
