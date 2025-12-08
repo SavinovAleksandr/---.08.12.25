@@ -101,7 +101,8 @@ h1, h2, h3, h4, h5, h6 {
   z-index: 50;
   background: rgba(255, 255, 255, 0.98);
   backdrop-filter: blur(10px);
-  border-bottom: 1px solid rgba(0, 0, 0, 0.04);
+  border-bottom: 2px solid rgba(40, 100, 230, 0.1);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
 }
 
 .header-inner {
@@ -109,27 +110,56 @@ h1, h2, h3, h4, h5, h6 {
   display: flex;
   align-items: center;
   justify-content: flex-start;
-  gap: 24px;
-  padding: 0 20px;
+  gap: 20px;
+  padding: 0 28px;
 }
 
 .brand {
   display: inline-flex;
   align-items: center;
-  gap: 12px;
+  gap: 18px;
   font-weight: 600;
+  padding: 8px 0;
 }
 
 .brand-logo {
-  width: 89px; /* уменьшено на 7% (96px * 0.93 = 89.28px) */
+  width: 120px;
   height: auto;
-  max-height: 89px;
+  max-height: 120px;
   object-fit: contain;
   display: block;
+  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.1));
+  transition: transform var(--transition-fast);
+}
+
+.brand-logo:hover {
+  transform: scale(1.05);
 }
 
 .brand-text {
-  font-size: 18px;
+  font-family: var(--font-heading);
+  font-size: 24px;
+  font-weight: 700;
+  color: var(--text-main);
+  letter-spacing: -0.01em;
+  background: linear-gradient(135deg, #15171c 0%, #2864e6 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  position: relative;
+  padding-left: 20px;
+}
+
+.brand-text::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 3px;
+  height: 28px;
+  background: var(--accent-gradient);
+  border-radius: 2px;
 }
 
 .main-nav {
