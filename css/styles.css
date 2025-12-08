@@ -742,6 +742,11 @@ body {
 
 /* Скрываем фото на мобильных */
 @media (max-width: 900px) {
+  .site-header {
+    left: 0;
+    right: 0;
+  }
+
   .two-column-layout {
     flex-direction: column;
   }
