@@ -294,6 +294,26 @@ body {
   overflow: hidden;
 }
 
+.project-image {
+  width: 100%;
+  height: 200px;
+  overflow: hidden;
+  border-radius: var(--radius-md);
+  margin-bottom: 16px;
+  background: var(--bg-alt);
+}
+
+.project-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform var(--transition-fast);
+}
+
+.project-card:hover .project-image img {
+  transform: scale(1.05);
+}
+
 .project-card {
   transition:
     transform var(--transition-fast),
@@ -618,6 +638,10 @@ body {
 
   .cards-grid {
     grid-template-columns: 1fr;
+  }
+
+  .project-image {
+    height: 180px;
   }
 
   .contacts-inner {
