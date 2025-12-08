@@ -142,6 +142,19 @@ body {
   width: 100%;
 }
 
+.header-logo {
+  display: flex;
+  align-items: center;
+  margin-left: auto;
+}
+
+.header-logo-img {
+  height: 40px;
+  width: auto;
+  max-width: 120px;
+  object-fit: contain;
+}
+
 /* HERO */
 
 .hero {
@@ -739,6 +752,10 @@ body {
 
   .burger {
     display: inline-flex;
+  }
+
+  .header-logo {
+    display: none;
   }
 }
 
