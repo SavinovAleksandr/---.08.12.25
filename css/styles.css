@@ -687,6 +687,17 @@ body {
     height: 180px;
   }
 
+  .companies-logos-grid {
+    grid-template-columns: repeat(4, 1fr);
+    gap: 16px;
+  }
+
+  .company-logo-item {
+    max-width: 120px;
+    height: 70px;
+    padding: 10px;
+  }
+
   .contacts-inner {
     flex-direction: column;
   }
