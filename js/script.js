@@ -1,3 +1,4 @@
+
 // Текущий год в футере
 (function setYear() {
   const yearSpan = document.getElementById("js-year");
@@ -181,4 +182,3 @@
     window.location.href = mailto;
   });
 })();
-
