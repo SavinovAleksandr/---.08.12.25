@@ -42,11 +42,21 @@
   function onScroll() {
     const scrollPos = window.scrollY || window.pageYOffset;
     const headerHeight = document.querySelector(".site-header").offsetHeight || 0;
+    const windowHeight = window.innerHeight;
+    const documentHeight = document.documentElement.scrollHeight;
 
     let currentId = "";
     sections.forEach((section) => {
       const top = section.offsetTop - headerHeight - 40;
-      if (scrollPos >= top) {
+      const bottom = section.offsetTop + section.offsetHeight;
+      
+      // Если доскроллили до конца страницы, подсвечиваем последнюю секцию
+      if (scrollPos + windowHeight >= documentHeight - 50) {
+        const lastSection = sections[sections.length - 1];
+        if (lastSection) {
+          currentId = lastSection.id;
+        }
+      } else if (scrollPos >= top && scrollPos < bottom) {
         currentId = section.id;
       }
     });
