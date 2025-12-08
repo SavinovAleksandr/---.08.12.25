@@ -609,16 +609,17 @@ h1, h2, h3, h4, h5, h6 {
 .site-footer {
   border-top: 1px solid rgba(0, 0, 0, 0.05);
   padding: 18px 0;
-  background: #fafbff;
+  background: #ffffff;
 }
 
 .footer-inner {
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: center;
   gap: 16px;
   font-size: 13px;
   color: var(--text-muted);
+  text-align: center;
 }
 
 .footer-inner a {
