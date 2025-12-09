@@ -202,18 +202,24 @@
         }),
       });
 
+      // Если PHP скрипт недоступен (например, на GitHub Pages), используем mailto:
+      if (!response.ok || response.status === 404) {
+        throw new Error("PHP script not available");
+      }
+
       // Проверяем, что ответ действительно JSON (PHP работает)
       const contentType = response.headers.get("content-type");
       if (!contentType || !contentType.includes("application/json")) {
         throw new Error("PHP script not available");
       }
 
-      // Если PHP скрипт недоступен (например, на GitHub Pages), используем mailto:
-      if (!response.ok || response.status === 404) {
+      let data;
+      try {
+        data = await response.json();
+      } catch (jsonError) {
+        // Если не удалось распарсить JSON (вернулся HTML), значит PHP не работает
         throw new Error("PHP script not available");
       }
-
-      const data = await response.json();
 
       if (data.success) {
         alert(data.message);
