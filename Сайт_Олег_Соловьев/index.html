@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <title>Олег Соловьёв — предприниматель и консультант</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description"
+        content="Олег Соловьёв — предприниматель, специалист по консалтингу, продаже оборудования, ИТ-решений и их интеграции.">
+  <meta name="author" content="Олег Соловьёв">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Олег Соловьёв — предприниматель и консультант">
+  <meta property="og:description"
+        content="Консалтинг, продажи ИТ-решений и комплексных систем безопасности, управление проектами.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://example.com/">
+  <meta property="og:image" content="https://example.com/img/hero.jpg">
+
+  <!-- Google Fonts: Inter -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <!-- Мобильное затемнение для меню -->
+  <div class="nav-backdrop"></div>
+
+  <header class="site-header">
+    <div class="header-inner">
+      <div class="brand">
+        <img src="img/logo-dt.png" alt="Digital-Tribe" class="brand-logo">
+        <span class="brand-text">Олег Соловьёв</span>
+      </div>
+    </div>
+  </header>
+
+  <nav class="main-nav">
+    <ul>
+      <li><a href="#competencies">Компетенции</a></li>
+      <li><a href="#projects">Портфолио и проекты</a></li>
+      <li><a href="#contacts">Контакты</a></li>
+    </ul>
+    <button class="burger" aria-label="Открыть меню">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
+
+  <main class="two-column-layout">
+    <!-- ЛЕВАЯ СТАТИЧНАЯ КОЛОНКА -->
+    <aside class="left-photo-column">
+      <img src="img/hero.jpg" alt="Олег Соловьёв">
+    </aside>
+
+    <!-- ПРАВАЯ ПРОКРУЧИВАЕМАЯ КОЛОНКА -->
+    <div class="right-content-column">
+      <!-- HERO (теперь без фото) -->
+      <section class="hero-text" id="hero">
+        <div class="hero-text-inner">
+          <h1>Олег Соловьёв</h1>
+          <p class="hero-subtitle">
+            Предприниматель, специалист по консалтингу, продаже оборудования,
+            ИТ-решений и их интеграции.
+          </p>
+          <div class="hero-facts">
+            <span class="hero-fact-badge">15+ внедрённых ИТ-решений</span>
+            <span class="hero-fact-badge">30+ реализованных проектов</span>
+            <span class="hero-fact-badge">500+ млн ₽ в продажах</span>
+          </div>
+          <div class="hero-actions">
+            <button class="btn primary js-open-modal" data-modal-purpose="Пригласить меня">
+              Пригласить меня
+            </button>
+            <a class="btn ghost" href="#projects">Посмотреть проекты</a>
+          </div>
+        </div>
+      </section>
+
+    <!-- КОМПЕТЕНЦИИ -->
+    <section class="section" id="competencies">
+      <div class="container">
+        <h2 class="section-title">Ключевые компетенции</h2>
+
+        <div class="cards-grid">
+          <article class="card">
+            <h3>Консалтинг и внедрение ИТ-решений</h3>
+            <p>
+              Специалист по консалтингу с подтвержденным опытом продвижения и внедрения
+              более 15 ИТ-решений в сегменте комплексных систем безопасности.
+            </p>
+            <button class="btn primary js-open-modal" data-modal-purpose="Пригласить меня">
+              Пригласить меня
+            </button>
+          </article>
+
+          <article class="card">
+            <h3>Продажи ИТ-оборудования и систем</h3>
+            <p>
+              Специалист по продажам на суммы 500+ млн руб. ИТ-оборудования, информационных систем
+              и комплексных систем безопасности.
+            </p>
+            <button class="btn primary js-open-modal" data-modal-purpose="Проконсультироваться">
+              Проконсультироваться
+            </button>
+          </article>
+
+          <article class="card">
+            <h3>Стратегическое управление</h3>
+            <p>
+              Генеральный / исполнительный директор, который разработал и успешно реализовал
+              в 5+ компаниях корпоративную стратегию, учитывающую технологические тенденции
+              и потребности рынка.
+            </p>
+            <button class="btn primary js-open-modal" data-modal-purpose="Обсудить сотрудничество">
+              Обсудить сотрудничество
+            </button>
+          </article>
+
+          <article class="card">
+            <h3>Управление проектами</h3>
+            <p>
+              Руководитель 30+ проектов в различных сферах — от разработки программного обеспечения
+              до строительства и возведения сооружений.
+            </p>
+            <button class="btn primary js-open-modal" data-modal-purpose="Пригласить к участию">
+              Пригласить к участию
+            </button>
+          </article>
+        </div>
+
+        <div class="subsection">
+          <h3 class="subsection-title">Некоторые компании, с которыми работал</h3>
+          <div class="companies-logos-grid">
+            <div class="company-logo-item">
+              <img src="img/image1.png" alt="ITV">
+            </div>
+            <div class="company-logo-item">
+              <img src="img/image3.png" alt="Роснефть">
+            </div>
+            <div class="company-logo-item">
+              <img src="img/image4.png" alt="ISS">
+      </div>
+            <div class="company-logo-item">
+              <img src="img/image5.png" alt="Билайн">
+            </div>
+            <div class="company-logo-item">
+              <img src="img/image7.png" alt="Газпром">
+          </div>
+            <div class="company-logo-item">
+              <img src="img/image8.png" alt="DEPO">
+            </div>
+            <div class="company-logo-item">
+              <img src="img/image9.png" alt="LUIS+">
+          </div>
+            <div class="company-logo-item">
+              <img src="img/image10.png" alt="Ростелеком">
+            </div>
+            <div class="company-logo-item">
+              <img src="img/image11.jpeg" alt="Ростелеком">
+          </div>
+            <div class="company-logo-item">
+              <img src="img/image12.png" alt="Сбер">
+            </div>
+            <div class="company-logo-item">
+              <img src="img/image14.png" alt="CDEK">
+          </div>
+            <div class="company-logo-item">
+              <img src="img/image15.png" alt="МТС">
+            </div>
+            <div class="company-logo-item">
+              <img src="img/image16.jpeg" alt="Meteor">
+          </div>
+            <div class="company-logo-item">
+              <img src="img/image17.png" alt="Компания">
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ПРОЕКТЫ -->
+    <section class="section section-alt" id="projects">
+      <div class="container">
+        <h2 class="section-title">Некоторые проекты</h2>
+
+        <div class="cards-grid projects-grid">
+          <article class="card project-card">
+            <div class="project-image">
+              <img src="img/Безопасный регион.jpeg" alt="Безопасный регион">
+            </div>
+            <h3>«Безопасный регион»</h3>
+            <p>
+              Создание сегмента комплексной системы безопасности субъекта РФ – системы видеонаблюдения
+              с функциями ситуационной аналитики, распознавания лиц и государственных
+              регистрационных знаков транспортных средств.
+            </p>
+          </article>
+
+          <article class="card project-card">
+            <div class="project-image">
+              <img src="img/Розыск.png" alt="РОЗЫСК-NANO">
+            </div>
+            <h3>«РОЗЫСК-NANO»</h3>
+            <p>
+              Разработка и вывод на рынок АПК «Розыск-nano», предназначенного для выявления
+              в потоке транспортных средств автомобилей, представляющих оперативный интерес
+              по различным основаниям.
+            </p>
+            <a class="card-link" href="https://rozysk-nano.ru" target="_blank" rel="noopener noreferrer">
+              rozysk-nano.ru
+            </a>
+          </article>
+
+          <article class="card project-card">
+            <div class="project-image">
+              <img src="img/Умный город.jpeg" alt="Умный город">
+            </div>
+            <h3>«Умный город»</h3>
+            <p>
+              Создание и успешная эксплуатация систем контроля уровня заполненности
+              контейнеров и площадок твердых коммунальных отходов.
+            </p>
+          </article>
+
+          <article class="card project-card">
+            <div class="project-image">
+              <img src="img/Развитие сотовой связи.jpeg" alt="Развитие сотовой связи">
+            </div>
+            <h3>«Развитие сотовой связи»</h3>
+            <p>
+              Возведение инфраструктуры связи — более 250 антенно-мачтовых сооружений за 2 года.
+            </p>
+          </article>
+
+          <article class="card project-card">
+            <div class="project-image">
+              <img src="img/СРВИ.jpeg" alt="СРВИ">
+            </div>
+            <h3>«СРВИ»</h3>
+            <p>
+              Создание закрытого сегмента комплексной системы безопасности
+              для использования федеральной службой безопасности.
+            </p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- КОНТАКТЫ -->
+    <section class="section" id="contacts">
+      <div class="container contacts-inner">
+        <div>
+          <h2 class="section-title">Контактная информация</h2>
+          <p class="contacts-text">
+            Готов обсудить задачи, связанные с консалтингом, продажей и внедрением ИТ-решений,
+            построением стратегии и управлением проектами.
+          </p>
+          <ul class="contacts-list">
+            <li><span>E-mail:</span>
+              <a href="mailto:info@digital-tribe.ru">info@digital-tribe.ru</a>
+            </li>
+          </ul>
+          <button class="btn primary js-open-modal" data-modal-purpose="Отправить заявку">
+            Оставить заявку
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="site-footer">
+      <div class="container footer-inner">
+        <div class="footer-left">
+          <p>© 2023 Олег Соловьёв</p>
+        </div>
+      </div>
+    </footer>
+    </div>
+  </main>
+
+  <!-- MODAL -->
+  <div class="modal-backdrop" data-modal-close></div>
+  <div class="modal" id="contact-modal" aria-hidden="true">
+    <div class="modal-content">
+      <button class="modal-close" aria-label="Закрыть" data-modal-close>&times;</button>
+      <h2 class="modal-title">Оставьте свои контакты, обсудим задачу</h2>
+      <p class="modal-caption">
+        Заполните форму, и я свяжусь с вами для уточнения деталей.
+      </p>
+      <div class="modal-proof">
+        <div class="modal-proof-icon">✓</div>
+        <div class="modal-proof-text">
+          <strong>30+ довольных клиентов</strong> • Ответ в течение 2 часов
+        </div>
+      </div>
+      <form id="contact-form">
+        <input type="hidden" name="purpose" id="modal-purpose" value="Заявка с сайта">
+        <div class="form-row">
+          <label for="name">Имя</label>
+          <input type="text" id="name" name="name" autocomplete="name">
+        </div>
+        <div class="form-row">
+          <label for="phone">Номер телефона *</label>
+          <input type="tel" id="phone" name="phone" required autocomplete="tel">
+        </div>
+        <div class="form-row">
+          <label for="email">Эл. почта *</label>
+          <input type="email" id="email" name="email" required autocomplete="email">
+        </div>
+
+        <label class="checkbox-row">
+          <input type="checkbox" id="consent" checked>
+          <span>
+            Подтверждаю, что ознакомился с
+            <a href="privacy.html" target="_blank" rel="noopener noreferrer">
+              Условиями обработки персональных данных
+            </a>
+            и принимаю их.
+          </span>
+        </label>
+
+        <button type="submit" class="btn primary btn-full">
+          Отправить заявку
+        </button>
+      </form>
+    </div>
+  </div>
+
+  <script src="js/script.js"></script>
+
+  <!-- Yandex.Metrika counter -->
+  <script type="text/javascript">
+      (function(m,e,t,r,i,k,a){
+          m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
+          m[i].l=1*new Date();
+          for (var j = 0; j < document.scripts.length; j++) {if (document.scripts[j].src === r) { return; }}
+          k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)
+      })(window, document,'script','https://mc.yandex.ru/metrika/tag.js?id=105743379', 'ym');
+      ym(105743379, 'init', {ssr:true, webvisor:true, clickmap:true, ecommerce:"dataLayer", accurateTrackBounce:true, trackLinks:true});
+  </script>
+  <noscript><div><img src="https://mc.yandex.ru/watch/105743379" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+  <!-- /Yandex.Metrika counter -->
+</body>
+</html>
