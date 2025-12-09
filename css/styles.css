@@ -1027,8 +1027,9 @@ h1, h2, h3, h4, h5, h6 {
 .right-content-column {
   flex: 1;
   margin-left: 45%;
+  margin-top: 100px; /* Fallback если CSS переменная не работает */
   margin-top: var(--header-height);
-    background: #fff;
+  background: #fff;
   position: relative;
   z-index: 2;
 }
