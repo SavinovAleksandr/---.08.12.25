@@ -396,9 +396,14 @@ h1, h2, h3, h4, h5, h6 {
 .card {
   background: #fff;
   border-radius: var(--radius-lg);
-  padding: 22px 22px 20px;
+  padding: 28px 26px 24px;
   border: 1px solid var(--border-soft);
-  box-shadow: 0 8px 18px rgba(20, 32, 77, 0.04);
+  box-shadow: 0 4px 12px rgba(20, 32, 77, 0.06);
+  transition: all var(--transition-medium);
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
 }
 
 .card h3 {
@@ -426,9 +431,15 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .card p {
-  margin: 0 0 12px;
+  margin: 0 0 16px;
   color: var(--text-muted);
   font-size: 15px;
+  flex-grow: 1;
+}
+
+.card .btn {
+  margin-top: auto;
+  align-self: flex-start;
 }
 
 .projects-grid .card {
