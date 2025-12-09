@@ -877,7 +877,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .privacy-main {
-  padding: 140px 0 50px;
+  padding: 100px 0 50px;
   margin-top: var(--header-height);
 }
 
@@ -1090,7 +1090,7 @@ h1, h2, h3, h4, h5, h6 {
   }
 
   .privacy-main {
-    padding: 120px 20px 40px;
+    padding: 100px 20px 40px;
     margin-top: var(--header-height);
   }
 }
