@@ -154,12 +154,15 @@
   });
 })();
 
-// Отправка формы через mailto
+// Отправка формы через AJAX на сервер
 (function handleForm() {
   const form = document.getElementById("contact-form");
   if (!form) return;
 
-  form.addEventListener("submit", (e) => {
+  const submitButton = form.querySelector('button[type="submit"]');
+  const originalButtonText = submitButton?.textContent || "Отправить заявку";
+
+  form.addEventListener("submit", async (e) => {
     e.preventDefault();
 
     const purpose = document.getElementById("modal-purpose")?.value || "Заявка с сайта";
@@ -178,18 +181,51 @@
       return;
     }
 
-    const subject = encodeURIComponent(purpose);
-    const bodyLines = [
-      "Новая заявка с сайта Олега Соловьёва:",
-      "",
-      `Имя: ${name || "не указано"}`,
-      `Телефон: ${phone}`,
-      `E-mail: ${email}`,
-    ];
-    const body = encodeURIComponent(bodyLines.join("\n"));
+    // Блокируем кнопку и показываем загрузку
+    if (submitButton) {
+      submitButton.disabled = true;
+      submitButton.textContent = "Отправка...";
+    }
 
-    const mailto = `mailto:info@digital-tribe.ru?subject=${subject}&body=${body}`;
-    window.location.href = mailto;
+    try {
+      const response = await fetch("send-email.php", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json; charset=utf-8",
+        },
+        body: JSON.stringify({
+          name: name,
+          phone: phone,
+          email: email,
+          purpose: purpose,
+        }),
+      });
+
+      const data = await response.json();
+
+      if (data.success) {
+        alert(data.message);
+        // Закрываем модальное окно
+        const modal = document.getElementById("contact-modal");
+        if (modal) {
+          modal.classList.remove("active");
+          document.body.style.overflow = "";
+        }
+        // Очищаем форму
+        form.reset();
+      } else {
+        alert(data.message || "Произошла ошибка при отправке. Пожалуйста, попробуйте позже.");
+      }
+    } catch (error) {
+      console.error("Ошибка отправки формы:", error);
+      alert("Произошла ошибка при отправке. Пожалуйста, попробуйте позже или свяжитесь с нами напрямую по email: info@digital-tribe.ru");
+    } finally {
+      // Восстанавливаем кнопку
+      if (submitButton) {
+        submitButton.disabled = false;
+        submitButton.textContent = originalButtonText;
+      }
+    }
   });
 })();
 
