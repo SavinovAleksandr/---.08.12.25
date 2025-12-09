@@ -188,6 +188,7 @@
     }
 
     try {
+      // Пытаемся отправить через PHP скрипт
       const response = await fetch("send-email.php", {
         method: "POST",
         headers: {
@@ -200,6 +201,11 @@
           purpose: purpose,
         }),
       });
+
+      // Если PHP скрипт недоступен (например, на GitHub Pages), используем mailto:
+      if (!response.ok || response.status === 404) {
+        throw new Error("PHP script not available");
+      }
 
       const data = await response.json();
 
@@ -217,8 +223,28 @@
         alert(data.message || "Произошла ошибка при отправке. Пожалуйста, попробуйте позже.");
       }
     } catch (error) {
-      console.error("Ошибка отправки формы:", error);
-      alert("Произошла ошибка при отправке. Пожалуйста, попробуйте позже или свяжитесь с нами напрямую по email: info@digital-tribe.ru");
+      // Fallback: используем mailto: если PHP недоступен (например, на GitHub Pages)
+      console.log("PHP script not available, using mailto: fallback");
+      
+      const subject = encodeURIComponent(purpose);
+      const bodyLines = [
+        "Новая заявка с сайта Олега Соловьёва:",
+        "",
+        `Имя: ${name || "не указано"}`,
+        `Телефон: ${phone}`,
+        `E-mail: ${email}`,
+      ];
+      const body = encodeURIComponent(bodyLines.join("\n"));
+
+      const mailto = `mailto:info@digital-tribe.ru?subject=${subject}&body=${body}`;
+      window.location.href = mailto;
+      
+      // Восстанавливаем кнопку
+      if (submitButton) {
+        submitButton.disabled = false;
+        submitButton.textContent = originalButtonText;
+      }
+      return;
     } finally {
       // Восстанавливаем кнопку
       if (submitButton) {
