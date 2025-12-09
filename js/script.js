@@ -202,6 +202,12 @@
         }),
       });
 
+      // Проверяем, что ответ действительно JSON (PHP работает)
+      const contentType = response.headers.get("content-type");
+      if (!contentType || !contentType.includes("application/json")) {
+        throw new Error("PHP script not available");
+      }
+
       // Если PHP скрипт недоступен (например, на GitHub Pages), используем mailto:
       if (!response.ok || response.status === 404) {
         throw new Error("PHP script not available");
@@ -246,8 +252,8 @@
       }
       return;
     } finally {
-      // Восстанавливаем кнопку
-      if (submitButton) {
+      // Восстанавливаем кнопку только если не использовали mailto:
+      if (submitButton && !submitButton.disabled) {
         submitButton.disabled = false;
         submitButton.textContent = originalButtonText;
       }
